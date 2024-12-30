@@ -1,34 +1,69 @@
+
+/* MINIMALISTIC */
+
 body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
-}
-
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
+	--default-font: -apple-system, BlinkMacSystemFont, Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+	--font-monospace: 'Source Code Pro', monospace;
+	--font-text: var(--default-font);
+	--mermaid-font: var(--default-font);
+	--reveal-font: var(--default-font);
+	--font-default: var(--default-font);
+	--h1-size: 1.6em;
+	--h2-size: 1.4em;
+	--h3-size: 1.2em;
+	--h4-size: 1.0em;
+	--webkit-font-smoothing: antialiased;
+  }
+  
+  .mod-left-split .workspace-tab-header-container-inner, .sidebar-toggle-button {
+	opacity: 0;
+	transition: opacity 2s step-end, opacity 0.1s ease-out 2s;
+  }
+  .mod-left-split .workspace-tab-header-container:hover .workspace-tab-header-container-inner, 
+  .workspace-tab-header-container:hover .sidebar-toggle-button {
+	opacity: 1;
+	transition: opacity 0.02s ease-in;
+  }
+  
+  .mod-left-split .workspace-tab-header-container {
+	background-color: var(--background-secondary);
+	border-bottom: 0px;
+  }
+  
+  .mod-root .workspace-tab-header-container:not(:has(.workspace-tab-header-container-inner > .workspace-tab-header:nth-child(2))) {
 	display: none;
-}
-
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
-}
-
-.menu {
-	padding: var(--size-2-1);
-}
-
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
-}
-
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
-}
+  }
+  
+  .inline-title {
+	font-size: 30.799999px;
+	margin-top: 10px;
+	padding-bottom: 20px;
+  }
+  
+  .iconize-title-icon {
+	display: none !important;
+  }
+  
+  /* CURSOR */
+  
+  body {
+	--cursor: default;
+	--cursor-link: pointer;
+	--link-color-hover: var(--link-color);
+	--link-external-color: var(--link-color);
+	--link-external-color-hover: var(--link-color);
+  }
+  
+  a {
+	cursor: pointer;
+  }
+  
+  .task-list-item-checkbox {
+	cursor: default;
+  }
+  
+  .recent-note-item {
+	cursor: default;
+  }
+  
+  
